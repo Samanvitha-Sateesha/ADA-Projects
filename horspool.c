@@ -11,18 +11,18 @@ int main(void)
 {
 	char text[MAX];
 	char pattern[MAX];
-    	int shiftTable[MAX];
+	int shiftTable[MAX];
 	int found;
-	puts("Enter the source string : ");
+	printf("Enter the source string : ");
 	scanf("%s", text);
-	puts("Enter the pattern string : ");
+	printf("Enter the pattern string : ");
 	scanf("%s", pattern);
 	
 	fnGenShiftTable(pattern,shiftTable);
 	found = fnHorspool(text,pattern,shiftTable);
 
 	if(found==-1)
-		puts("\nMatching Substring not found.\n");
+		printf("\nMatching Substring not found.\n");
 	else
 		printf("\nMatching Substring found at position: %d\n",found+1);
 	
