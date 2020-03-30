@@ -14,9 +14,9 @@ int main(void)
     	int shiftTable[MAX];
 	int found;
 	puts("Enter the source string : ");
-	gets(text);
+	scanf("%s", text);
 	puts("Enter the pattern string : ");
-	gets(pattern);
+	scanf("%s", pattern);
 	
 	fnGenShiftTable(pattern,shiftTable);
 	found = fnHorspool(text,pattern,shiftTable);
@@ -69,19 +69,21 @@ int fnHorspool(char s[],char p[],int t[])
 	n = strlen(s);
 	m = strlen(p);
 	i = m-1;
-	while(i<n)
+	while(i<=n-1)
 	{
 		k = 0;
-		while((k<m)&&(p[m-1-k]==s[i-k])) {
-			count++;
+		count++;
+		
+		while((k<=m-1)&&(p[m-1-k]==s[i-k])) {
 			k++;
+			count++;
 		}
+		
 
 		if (k == m)
 			return i-m+1;
 		else
 			i = i+t[s[i]];
-		count++;
 	}
 
 	return -1;
