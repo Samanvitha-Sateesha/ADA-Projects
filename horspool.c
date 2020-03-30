@@ -2,6 +2,7 @@
 #include <string.h>
 
 const int MAX = 256;
+int count = 0;
 
 int fnHorspool(char string[], char pattern[],int []);
 void fnGenShiftTable(char *,int []);
@@ -24,6 +25,8 @@ int main(void)
 		puts("\nMatching Substring not found.\n");
 	else
 		printf("\nMatching Substring found at position: %d\n",found+1);
+	
+	printf("Basic operation count: %d\n",count);
 
 	return 0;
 }
@@ -43,14 +46,10 @@ void fnGenShiftTable(char p[], int t[])
 	m = strlen(p);
 
 	for(i=0; i<MAX; i++)
-	{
 		t[i]=m;
-	}
-
+	
 	for(j=0; j<m-1; j++)
-	{
 		t[p[j]] = m-1-j;
-	}
 }
 
 /******************************************************************************
@@ -73,13 +72,16 @@ int fnHorspool(char s[],char p[],int t[])
 	while(i<n)
 	{
 		k = 0;
-		while((k<m)&&(p[m-1-k]==s[i-k]))
+		while((k<m)&&(p[m-1-k]==s[i-k])) {
+			count++;
 			k++;
+		}
 
 		if (k == m)
 			return i-m+1;
 		else
 			i = i+t[s[i]];
+		count++;
 	}
 
 	return -1;
