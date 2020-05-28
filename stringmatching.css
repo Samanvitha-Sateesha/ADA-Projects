@@ -4,7 +4,10 @@ body {
   padding: 10px;
   border: 0px;
   color: #000;
-  background: #fff;
+  background: url(https://i.pinimg.com/originals/e6/aa/6a/e6aa6a186bb19b79b8493478b14dedb4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; 
+
 }
 
 select#algorithm {
@@ -26,11 +29,11 @@ table.strings {
 }
 
 td.table-char {
-  font-family: monospace;
-  color: grey;
+  font-family: Nunito;
+  color: rgb(15, 15, 15);
   border: none;
   font-size: 24px;
-  width: 15px;
+  width: 20px;
 }
 
 td.current {
@@ -39,7 +42,10 @@ td.current {
 }
 
 td.match {
-  background-color: lightgreen;
+  background-color: rgb(10, 177, 10);
+}
+a{
+  color: #0958ac;
 }
 
 div.display-area {
