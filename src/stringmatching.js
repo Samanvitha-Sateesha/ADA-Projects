@@ -18,7 +18,7 @@ require(["algorithms"], function (algorithms) {
 
     data: {
       textInput: "the mathematical theory",
-      patternInput: "thema",
+      patternInput: "tical",
       text: "",
       pattern: "",
       comparisons: [],
