@@ -6,8 +6,7 @@ body {
   color: #000;
   background: url(https://i.pinimg.com/originals/e6/aa/6a/e6aa6a186bb19b79b8493478b14dedb4.jpg);
   background-repeat: no-repeat;
-  background-size: cover; 
-
+  background-size: cover;
 }
 
 select#algorithm {
@@ -29,7 +28,7 @@ table.strings {
 }
 
 td.table-char {
-  font-family: Nunito;
+  /* font-family: Nunito; */
   color: rgb(15, 15, 15);
   border: none;
   font-size: 24px;
@@ -44,7 +43,7 @@ td.current {
 td.match {
   background-color: rgb(10, 177, 10);
 }
-a{
+a {
   color: #0958ac;
 }
 

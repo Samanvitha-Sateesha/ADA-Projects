@@ -12,7 +12,7 @@ define([], function () {
     var i,
       m = pat.length;
     shift = new Array(ALPHABET_LEN).fill(m);
-    for (i = 0; i < m; i++) {
+    for (i = 0; i < m - 1; i++) {
       shift[ord(pat[i])] = m - i - 1;
     }
     return shift;
@@ -33,15 +33,16 @@ define([], function () {
     i = m - 1;
     while (i < text.length) {
       j = m - 1;
-      while (j >= 0 && equal(i, j)) {
-        i -= 1;
+      k = i;
+      while (j >= 0 && equal(k, j)) {
+        k -= 1;
         j -= 1;
       }
       if (j < 0) {
         matches.push(comparisons.length - 1);
-        i += m + 1;
+        i += m;
       } else {
-        i += Math.max(m - j, shift[ord(text[i])]);
+        i += shift[ord(text[i])];
       }
     }
 
